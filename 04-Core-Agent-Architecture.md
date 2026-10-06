@@ -2,9 +2,9 @@
 
 ---
 
-## Introduction to Agents and Agent Architectures | <mark>智能体及其架构简介</mark>
+## Introduction to Agents | <mark>智能体入门</mark>
 
-**November 2025**
+**Updated May 2026 | <mark>2026 年 5 月更新</mark>**
 
 ---
 
@@ -30,9 +30,9 @@ To do this well, start by defining the business problem, then test models agains
 
 <mark>要做好这一点，首先要定义业务问题，然后针对直接映射到该结果的指标测试模型。如果你的智能体需要编写代码，请在你的私有代码库上测试它。如果它处理保险索赔，请评估其从特定文档格式中提取信息的能力。然后必须将此分析与成本和延迟的实际情况交叉参考。"最佳"模型是在质量、速度和价格的最佳交叉点上，针对你的特定任务⁸。</mark>
 
-You may choose more than one model, a "team of specialists." You don't use a sledgehammer to crack a nut. A robust agent architecture might use a frontier model like Gemini 2.5 Pro for the heavy lifting of initial planning and complex reasoning, but then intelligently route simpler, high-volume tasks—like classifying user intent or summarizing text—to a much faster and more cost-effective model like Gemini 2.5 Flash. Model routing might be automatic or hard-coded but is a key strategy for optimizing both performance and cost⁹.
+You may choose more than one model, a "team of specialists." You don't use a sledgehammer to crack a nut. A robust agent architecture might use a frontier model like Gemini 3.2 Pro for the heavy lifting of initial planning and complex reasoning, but then intelligently route simpler, high-volume tasks—like classifying user intent or summarizing text—to a much faster and more cost-effective model like Gemini 3.2 Flash series or open models like Gemma 4. Model routing might be automatic or hard-coded but is a key strategy for optimizing both performance and cost⁹.
 
-<mark>你可以选择多个模型，一个"专家团队"。你不会用大锤砸坚果。一个稳健的智能体架构可能会使用像 Gemini 2.5 Pro 这样的前沿模型来完成初始规划和复杂推理的繁重工作，然后智能地将更简单、高容量的任务——如分类用户意图或总结文本——路由到像 Gemini 2.5 Flash 这样更快且更具成本效益的模型。模型路由可能是自动的或硬编码的，但这是优化性能和成本的关键策略⁹。</mark>
+<mark>你可以选择多个模型，一个"专家团队"。你不会用大锤砸坚果。一个稳健的智能体架构可能会使用像 Gemini 3.2 Pro 这样的前沿模型来完成初始规划和复杂推理的繁重工作，然后智能地将更简单、高容量的任务——如分类用户意图或总结文本——路由到Gemini 3.2 Flash 系列这样更快且更具成本效益的模型，或 Gemma 4 这样的开放模型。模型路由可能是自动的或硬编码的，但这是优化性能和成本的关键策略⁹。</mark>
 
 The same principle applies to handling diverse data types. While a natively multimodal model like Gemini live mode¹⁰ offers a streamlined path to processing images and audio, an alternative is to use specialized tools like the Cloud Vision API¹¹ or Speech-to-Text API¹². In this pattern, the world is first converted to text, which is then passed to a language-only model for reasoning. This adds flexibility and allows for best-of-breed components, but also introduces significant complexity.
 
@@ -158,19 +158,19 @@ After you have built a local agent, you will want to deploy it to a server where
 
 <mark>在构建本地智能体之后，你将希望将其部署到一个服务器上，在那里它一直运行，其他人和智能体可以使用它。继续我们的类比，部署和服务将是我们智能体的身体和腿。智能体需要几个服务才能有效，如会话历史和记忆持久化等。作为智能体构建者，你还将负责决定记录什么，以及采取什么安全措施来保护数据隐私、数据驻留和法规合规性。所有这些服务都在范围内，当将智能体部署到生产环境时。</mark>
 
-Luckily, agent builders can rely on decades of application hosting infrastructure. Agents are a new form of software after all and many of the same principles apply. Builders can rely on purpose-built, agent specific, deployment options like Vertex AI Agent Engine which support runtime and everything else in one platform²¹. For software developers who want to control their application stacks more directly, or deploy agents within their existing DevOps infrastructure, any agent and most agent services can be added to a docker container and deployed onto industry standard runtimes like Cloud Run or GKE²².
+Luckily, builders can rely on the newly launched Gemini Enterprise Agent Platform, which provides a single destination for technical teams to build, scale, govern, and optimize agents. This includes the new Agent Studio for seamless transitions from prompting to deployment, and a revamped Agent Runtime delivering sub-second cold starts, support for autonomous multi-day workflows, and Memory Bank for persistent long-term context across sessions, everything else one platform²¹. For software developers who want to control their application stacks more directly, or deploy agents within their existing DevOps infrastructure, any agent and most agent services can be added to a docker container and deployed onto industry standard runtimes like Cloud Run or GKE²².
 
-<mark>幸运的是，智能体构建者可以依赖数十年的应用托管基础设施。智能体毕竟是一种新形式的软件，许多相同的原则都适用。构建者可以依赖专门构建的、特定于智能体的部署选项，如 Vertex AI Agent Engine，它在一个平台中支持运行时和其他所有内容²¹。对于希望更直接控制其应用堆栈或在现有 DevOps 基础设施中部署智能体的软件开发人员，任何智能体和大多数智能体服务都可以添加到 docker 容器中，并部署到像 Cloud Run 或 GKE²² 这样的行业标准运行时上。</mark>
+<mark>幸运的是，构建者可以使用新推出的 Gemini Enterprise Agent Platform，为技术团队提供构建、扩展、治理和优化智能体的一站式平台。其中包括新的 Agent Studio，可从编写提示无缝过渡到部署；改进后的 Agent Runtime 提供亚秒级冷启动，支持持续多天的自主工作流；Memory Bank 则用于跨会话持久保存长期上下文。这些能力集中在同一平台中²¹。对于希望更直接控制应用技术栈，或在现有 DevOps 基础设施中部署智能体的软件开发者，可以将智能体和大多数智能体服务放入 Docker 容器，再部署到 Cloud Run 或 GKE²² 等行业标准运行环境。</mark>
 
 ---
 
 [IMAGE_4: image_004_page_27_1.png - 位于第 27 页]
 
-![Vertex AI Agent builder](images/image_004_page_27_1.png)
+![Gemini Enterprise Agent Platform](images/image_004_page_27_1.png)
 
-**Figure 4: Vertex AI Agent builder from https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/overview**
+**Figure 4: Gemini Enterprise Agent Platform https://cloud.google.com/products/gemini-enterprise-agent-platform**
 
-<mark>**图 4：Vertex AI Agent 构建器，来自 https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/overview**</mark>
+<mark>**图 4：Gemini Enterprise Agent Platform，https://cloud.google.com/products/gemini-enterprise-agent-platform**</mark>
 
 ---
 
@@ -218,9 +218,9 @@ Business metrics don't tell you if the agent is behaving correctly. Since a simp
 
 <mark>业务指标不会告诉你智能体是否正确行为。由于简单的通过/失败是不可能的，我们转向使用"LM 作为评判 (LM as Judge)"来评估质量。这涉及使用一个强大的模型根据预定义的规则评估智能体的输出：它给出了正确的答案吗？响应是否基于事实？它是否遵循了指令？这种自动化评估，针对提示的黄金数据集运行，提供了一致的质量衡量。</mark>
 
-Creating the evaluation datasets—which include the ideal (or "golden") questions and correct responses—can be a tedious process. To build these, you should sample scenarios from existing production or development interactions with the agent. The dataset must cover the full breadth of use cases that you expect your users to engage with, plus a few unexpected ones. While investment in evaluation pays off quickly, evaluation results should always be reviewed by a domain expert before being accepted as valid. Increasingly, the curation and maintenance of these evaluations is becoming a key responsibility for Product Managers with the support from Domain experts.
+Creating the evaluation datasets—which include the ideal (or "golden") questions and correct responses—can be a tedious process. To build these, you should sample scenarios from existing production or development interactions with the agent. The dataset must cover the full breadth of use cases that you expect your users to engage with, plus a few unexpected ones. While investment in evaluation pays off quickly, evaluation results should always be reviewed by a domain expert before being accepted as valid. Increasingly, the curation and maintenance of these evaluations is becoming a key responsibility for Product Managers with the support from Domain experts. To operationalize this, the Gemini Enterprise Agent Platform provides dedicated tools like Agent Simulation and Agent Evaluation, allowing teams to automatically score, stress-test, and guarantee quality before launching into production.
 
-<mark>创建评估数据集——包括理想（或"黄金"）问题和正确响应——可能是一个繁琐的过程。要构建这些，你应该从与智能体的现有生产或开发交互中采样场景。数据集必须涵盖你期望用户参与的用例的全部广度，加上一些意外情况。虽然评估投资很快就能得到回报，但评估结果在被接受为有效之前应始终由领域专家审查。越来越多地，这些评估的策展和维护正在成为产品经理在领域专家支持下的关键责任。</mark>
+<mark>创建评估数据集——包括理想（或"黄金"）问题和正确响应——可能是一个繁琐的过程。要构建这些，你应该从与智能体的现有生产或开发交互中采样场景。数据集必须涵盖你期望用户参与的用例的全部广度，加上一些意外情况。虽然评估投资很快就能得到回报，但评估结果在被接受为有效之前应始终由领域专家审查。越来越多地，这些评估的策展和维护正在成为产品经理在领域专家支持下的关键责任。为将这一流程付诸实践，Gemini Enterprise Agent Platform 提供了 Agent Simulation 和 Agent Evaluation 等专用工具，让团队能够在投入生产前自动评分、进行压力测试并保障质量。</mark>
 
 ### Metrics-Driven Development: Your Go/No-Go for Deployment | <mark>指标驱动开发：部署的 Go/No-Go 决策</mark>
 
@@ -230,9 +230,9 @@ Once you have automated dozens of evaluation scenarios and established trusted q
 
 ### Debug with OpenTelemetry Traces: Answering "Why?" | <mark>使用 OpenTelemetry 跟踪调试：回答"为什么？"</mark>
 
-When your metrics dip or a user reports a bug, you need to understand "why." An OpenTelemetry trace is a high-fidelity, step-by-step recording of the agent's entire execution path (trajectory), allowing you to debug the agent's steps²⁵. With traces, you can see the exact prompt sent to the model, the model's internal reasoning (if available), the specific tool it chose to call, the precise parameters it generated for that tool, and the raw data that came back as an observation. Traces can be complicated the first time you look at them but they provide the details needed to diagnose and fix the root cause of any issue. Important trace details may be turned into metrics, but reviewing traces is primarily for debugging, not overviews of performance. Trace data can be seamlessly collected in platforms like Google Cloud Trace, which visualize and search across vast quantities of traces, streamlining root cause analysis.
+When your metrics dip or a user reports a bug, you need to understand "why." An OpenTelemetry trace is a high-fidelity, step-by-step recording of the agent's entire execution path (trajectory), allowing you to debug the agent's steps²⁵. With traces, you can see the exact prompt sent to the model, the model's internal reasoning (if available), the specific tool it chose to call, the precise parameters it generated for that tool, and the raw data that came back as an observation. Traces can be complicated the first time you look at them but they provide the details needed to diagnose and fix the root cause of any issue. Important trace details may be turned into metrics, but reviewing traces is primarily for debugging, not overviews of performance. Trace data can be seamlessly collected in platforms like Google Cloud Trace, which visualize and search across vast quantities of traces, streamlining root cause analysis. With the Gemini Enterprise Agent Platform, developers can now also leverage Agent Observability for visual debugging of full reasoning chains, and Agent Optimizer to auto-cluster failures and automatically suggest fixes for system prompts.
 
-<mark>当你的指标下降或用户报告错误时，你需要理解"为什么"。OpenTelemetry 跟踪是智能体整个执行路径（轨迹）的高保真、逐步记录，允许你调试智能体的步骤²⁵。通过跟踪，你可以看到发送给模型的确切提示、模型的内部推理（如果可用）、它选择调用的特定工具、它为该工具生成的精确参数，以及作为观察返回的原始数据。跟踪第一次看时可能很复杂，但它们提供了诊断和修复任何问题根本原因所需的细节。重要的跟踪细节可能会转化为指标，但审查跟踪主要用于调试，而不是性能概览。跟踪数据可以无缝收集在像 Google Cloud Trace 这样的平台中，该平台可视化并搜索大量跟踪，简化根本原因分析。</mark>
+<mark>当你的指标下降或用户报告错误时，你需要理解"为什么"。OpenTelemetry 跟踪是智能体整个执行路径（轨迹）的高保真、逐步记录，允许你调试智能体的步骤²⁵。通过跟踪，你可以看到发送给模型的确切提示、模型的内部推理（如果可用）、它选择调用的特定工具、它为该工具生成的精确参数，以及作为观察返回的原始数据。跟踪第一次看时可能很复杂，但它们提供了诊断和修复任何问题根本原因所需的细节。重要的跟踪细节可能会转化为指标，但审查跟踪主要用于调试，而不是性能概览。跟踪数据可以无缝收集在像 Google Cloud Trace 这样的平台中，该平台可视化并搜索大量跟踪，简化根本原因分析。借助 Gemini Enterprise Agent Platform，开发者还可以使用 Agent Observability 对完整推理链进行可视化调试，并使用 Agent Optimizer 自动聚类失败案例、自动提出系统提示词的修改建议。</mark>
 
 ### Cherish Human Feedback: Guiding Your Automation | <mark>珍惜人类反馈：指导自动化</mark>
 
@@ -258,9 +258,9 @@ Computer use is a category of tool where the LM takes control of a user interfac
 
 <mark>计算机使用 (Computer Use) 是一类工具，其中 LM 控制用户界面，通常带有人类交互和监督。启用计算机使用的智能体可以决定下一个最佳行动是导航到新页面、突出显示特定按钮或用相关信息预填表单²⁷。</mark>
 
-Instead of an agent using an interface on behalf of the user, the LM can change the UI to meet the needs of the moment. This can be done with Tools which control UI (MCP UI)²⁸, or specialized UI messaging systems which can sync client state with an agent (AG UI)²⁹, and even generation of bespoke interfaces (A2UI)³⁰.
+Instead of an agent using an interface on behalf of the user, the LM can change the UI to meet the needs of the moment. This can be done with Tools which control UI (MCP UI)²⁸, or specialized UI messaging systems which can sync client state with an agent (AG UI)²⁹, and even generation of bespoke interfaces (A2UI)³⁰. These dynamic interactions are now natively supported via the Agent-to-UI protocol (A2UI) in the Gemini Enterprise app, allowing custom agents to dynamically generate rich, native UI components,like interactive data visualizations and structured forms,directly within the user's workspace.
 
-<mark>智能体不是代表用户使用界面，LM 可以改变 UI 以满足当下的需求。这可以通过控制 UI 的工具（MCP UI）²⁸、可以将客户端状态与智能体同步的专业 UI 消息系统（AG UI）²⁹，甚至生成定制界面（A2UI）³⁰ 来完成。</mark>
+<mark>智能体不是代表用户使用界面，LM 可以改变 UI 以满足当下的需求。这可以通过控制 UI 的工具（MCP UI）²⁸、可以将客户端状态与智能体同步的专业 UI 消息系统（AG UI）²⁹，甚至生成定制界面（A2UI）³⁰ 来完成。Gemini Enterprise 应用现已通过 Agent-to-UI 协议（A2UI）原生支持这些动态交互，让自定义智能体能够直接在用户工作区中动态生成丰富的原生 UI 组件，例如交互式数据可视化和结构化表单。</mark>
 
 Of course, human interaction is not limited to screens and keyboards. Advanced agents are breaking the text barrier and moving into real-time, multimodal communication with "live mode" creating a more natural, human-like connection. Technologies like the Gemini Live API³¹ enable bidirectional streaming, allowing a user to speak to an agent and interrupt it, just as they would in a natural conversation.
 
@@ -318,9 +318,9 @@ In the traditional security model, there are human users which might use OAuth o
 
 <mark>在传统的安全模型中，有可能使用 OAuth 或 SSO 的人类用户，还有使用 IAM 或服务账户的服务。智能体添加了第三类主体。智能体不仅仅是一段代码；它是一个自主行动者，一种需要自己可验证身份的新主体。就像员工被发放身份徽章一样，平台上的每个智能体必须被发放一个安全的、可验证的"数字护照"。这个智能体身份 (Agent Identity) 与调用它的用户身份和构建它的开发者身份是不同的。这是我们必须在企业中处理身份和访问管理 (Identity and Access Management, IAM) 方式的根本转变。</mark>
 
-Having each identity be verified and having access controls for all of them, is the bedrock of agent security. Once an agent has a cryptographically verifiable identity (often using standards like SPIFFE³⁵), it can be granted its own specific, least-privilege permissions. The SalesAgent is granted read/write access to the CRM, while the HRonboardingAgent is explicitly denied. This granular control is critical. It ensures that even if a single agent is compromised or behaves unexpectedly, the potential blast radius is contained. Without an agent identity construct, agents cannot work on behalf of humans with limited delegated authority.
+Having each identity be verified and having access controls for all of them, is the bedrock of agent security. Once an agent has a cryptographically verifiable identity (often using standards like SPIFFE³⁵), it can be granted its own specific, least-privilege permissions. The SalesAgent is granted read/write access to the CRM, while the HRonboardingAgent is explicitly denied. This granular control is critical. It ensures that even if a single agent is compromised or behaves unexpectedly, the potential blast radius is contained. Without an agent identity construct, agents cannot work on behalf of humans with limited delegated authority. The Gemini Enterprise Agent Platform now also natively enforces this via the Agent Identity feature, ensuring every agent receives a unique cryptographic ID. This creates a clear, auditable trail mapped back to defined enterprise authorization policies.
 
-<mark>让每个身份都经过验证并对所有身份进行访问控制，是智能体安全的基石。一旦智能体拥有加密可验证的身份（通常使用像 SPIFFE³⁵ 这样的标准），它就可以被授予自己特定的、最小特权权限。SalesAgent 被授予对 CRM 的读/写访问权限，而 HRonboardingAgent 则被明确拒绝。这种细粒度控制至关重要。它确保即使单个智能体被破坏或表现异常，潜在的爆炸半径也是受控的。没有智能体身份构造，智能体无法代表人类以有限的委派权限工作。</mark>
+<mark>让每个身份都经过验证并对所有身份进行访问控制，是智能体安全的基石。一旦智能体拥有加密可验证的身份（通常使用像 SPIFFE³⁵ 这样的标准），它就可以被授予自己特定的、最小特权权限。SalesAgent 被授予对 CRM 的读/写访问权限，而 HRonboardingAgent 则被明确拒绝。这种细粒度控制至关重要。它确保即使单个智能体被破坏或表现异常，潜在的爆炸半径也是受控的。没有智能体身份构造，智能体无法代表人类以有限的委派权限工作。Gemini Enterprise Agent Platform 现在也通过 Agent Identity 功能原生落实这一机制，确保每个智能体获得唯一的密码学身份标识。这会形成清晰、可审计的记录，并将其关联到既定的企业授权策略。</mark>
 
 ---
 
@@ -368,9 +368,9 @@ For more dynamic security that can adapt to the agent's runtime behavior, ADK pr
 
 <mark>对于可以适应智能体运行时行为的更动态的安全性，ADK 提供了回调 (Callbacks) 和插件 (Plugins)。before_tool_callback 允许你在工具调用运行之前检查其参数，根据智能体的当前状态验证它们以防止不一致的操作。对于更可重用的策略，你可以构建插件。一个常见的模式是"Gemini 作为评判"³⁹，它使用像 Gemini Flash-Lite 这样的快速、廉价的模型或你自己微调的 Gemma 模型来实时筛选用户输入和智能体输出的提示注入或有害内容。</mark>
 
-For organizations that prefer a fully managed, enterprise-grade solution for these dynamic checks, Model Armor can be integrated as an optional service. Model Armor acts as a specialized security layer that screens prompts and responses for a wide range of threats, including prompt injection, jailbreak attempts, sensitive data (PII) leakage, and malicious URLs⁴⁰. By offloading these complex security tasks to a dedicated service, developers can ensure consistent, robust protection without having to build and maintain these guardrails themselves. This hybrid approach within ADK—combining strong identity, deterministic in-tool logic, dynamic AI-powered guardrails, and optional managed services like Model Armor—is how you build a single agent that is both powerful and trustworthy.
+Within the Gemini Enterprise Agent Platform, Agent Gateway acts as the air traffic control for your ecosystem. It provides secure, unified connectivity while natively enforcing Model Armor protections to safeguard against prompt injection and data leakage. Model Armor acts as a specialized security layer that screens prompts and responses for a wide range of threats, including prompt injection, jailbreak attempts, sensitive data (PII) leakage, and malicious URLs⁴⁰. By offloading these complex security tasks to a dedicated service, developers can ensure consistent, robust protection without having to build and maintain these guardrails themselves. This hybrid approach within ADK—combining strong identity, deterministic in-tool logic, dynamic AI-powered guardrails, and optional managed services like Model Armor—is how you build a single agent that is both powerful and trustworthy.
 
-<mark>对于更喜欢完全托管的企业级解决方案来进行这些动态检查的组织，Model Armor 可以作为可选服务集成。Model Armor 充当专门的安全层，筛选提示和响应以检测各种威胁，包括提示注入、越狱尝试、敏感数据 (PII) 泄漏和恶意 URL⁴⁰。通过将这些复杂的安全任务卸载到专用服务，开发人员可以确保一致的、稳健的保护，而无需自己构建和维护这些护栏。ADK 中的这种混合方法——结合强身份、确定性工具内逻辑、动态 AI 驱动的护栏以及像 Model Armor 这样的可选托管服务——是你构建既强大又值得信赖的单个智能体的方式。</mark>
+<mark>在 Gemini Enterprise Agent Platform 中，Agent Gateway 就像生态系统的空中交通管制中心。它提供安全、统一的连接，同时原生执行 Model Armor 保护机制，防范提示注入和数据泄露。Model Armor 充当专门的安全层，筛选提示和响应以检测各种威胁，包括提示注入、越狱尝试、敏感数据 (PII) 泄漏和恶意 URL⁴⁰。通过将这些复杂的安全任务卸载到专用服务，开发人员可以确保一致的、稳健的保护，而无需自己构建和维护这些护栏。ADK 中的这种混合方法——结合强身份、确定性工具内逻辑、动态 AI 驱动的护栏以及像 Model Armor 这样的可选托管服务——是你构建既强大又值得信赖的单个智能体的方式。</mark>
 
 ---
 
@@ -414,13 +414,13 @@ This control plane serves two primary, interconnected functions:
 
 <mark>这个控制平面服务于两个主要的、相互关联的功能：</mark>
 
-1. **Runtime Policy Enforcement**: It acts as the architectural chokepoint for implementing security. It handles authentication ("Do I know who this actor is?") and authorization ("Do they have permission to do this?"). Centralizing enforcement provides a "single pane of glass" for observability, creating common logs, metrics, and traces for every transaction. This transforms the spaghetti of disparate agents and workflows into a transparent and auditable system.
+1. **Runtime Policy Enforcement**: This control plane is operationalized via the new Agent Gateway, which enforces consistent security policies across any environment. It acts as the architectural chokepoint for implementing security. It handles authentication ("Do I know who this actor is?") and authorization ("Do they have permission to do this?"). Centralizing enforcement provides a "single pane of glass" for observability, creating common logs, metrics, and traces for every transaction. This transforms the spaghetti of disparate agents and workflows into a transparent and auditable system.
 
-<mark>1. **运行时策略执行**：它作为实施安全的架构瓶颈。它处理认证（"我知道这个行动者是谁吗？"）和授权（"他们有权限做这件事吗？"）。集中执行提供了可观察性的"单一窗格"，为每笔交易创建通用日志、指标和跟踪。这将不同智能体和工作流的意大利面转变为透明和可审计的系统。</mark>
+<mark>1. **运行时策略执行**：这一控制平面通过新的 Agent Gateway 落地，在任何环境中执行一致的安全策略。它作为实施安全的架构瓶颈。它处理认证（"我知道这个行动者是谁吗？"）和授权（"他们有权限做这件事吗？"）。集中执行提供了可观察性的"单一窗格"，为每笔交易创建通用日志、指标和跟踪。这将不同智能体和工作流的意大利面转变为透明和可审计的系统。</mark>
 
-2. **Centralized Governance**: To enforce policies effectively, the gateway needs a source of truth. This is provided by a central registry—an enterprise app store for agents and tools. This registry allows developers to discover and reuse existing assets, preventing redundant work, while giving administrators a complete inventory. More importantly, it enables a formal lifecycle for agents and tools, allowing for security reviews before publication, versioning, and the creation of fine-grained policies that dictate which business units can access which agents.
+2. **Centralized Governance**: To enforce policies effectively, the gateway needs a source of truth. This is provided by a central registry—an enterprise app store for agents and tools. This registry allows developers to discover and reuse existing assets, preventing redundant work, while giving administrators a complete inventory. More importantly, it enables a formal lifecycle for agents and tools, allowing for security reviews before publication, versioning, and the creation of fine-grained policies that dictate which business units can access which agents. This is managed through the new Agent Registry, a central library that indexes every internal agent, tool, and skill (including reusable Skills for codified workflows), simplifying discovery and ensuring only approved assets are available.
 
-<mark>2. **集中式治理**：为了有效执行策略，网关需要一个真实来源。这由中央注册表提供——智能体和工具的企业应用商店。该注册表允许开发人员发现和重用现有资产，防止冗余工作，同时为管理员提供完整的清单。更重要的是，它为智能体和工具启用了正式的生命周期，允许在发布之前进行安全审查、版本控制以及创建细粒度策略，这些策略规定哪些业务部门可以访问哪些智能体。</mark>
+<mark>2. **集中式治理**：为了有效执行策略，网关需要一个真实来源。这由中央注册表提供——智能体和工具的企业应用商店。该注册表允许开发人员发现和重用现有资产，防止冗余工作，同时为管理员提供完整的清单。更重要的是，它为智能体和工具启用了正式的生命周期，允许在发布之前进行安全审查、版本控制以及创建细粒度策略，这些策略规定哪些业务部门可以访问哪些智能体。这一过程通过新的 Agent Registry 管理。它是一个中央资源库，为所有内部智能体、工具和技能建立索引，包括将工作流程固化下来的可复用 Skills，从而简化资源发现，并确保只有经过批准的资产可供使用。</mark>
 
 By combining a runtime gateway with a central governance registry, an organization transforms the risk of chaotic sprawl into a managed, secure, and efficient ecosystem.
 

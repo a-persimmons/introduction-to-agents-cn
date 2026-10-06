@@ -2,9 +2,9 @@
 
 ---
 
-## Introduction to Agents and Agent Architectures | <mark>智能体及其架构简介</mark>
+## Introduction to Agents | <mark>智能体入门</mark>
 
-**November 2025**
+**Updated May 2026 | <mark>2026 年 5 月更新</mark>**
 
 ---
 
@@ -80,9 +80,9 @@ This approach has already led to significant breakthroughs, including:
 
 <mark>- 为开放的数学问题找到新的解决方案。</mark>
 
-AlphaEvolve excels at problems where verifying the quality of a solution is far easier than finding it in the first place.
+AlphaEvolve excels at problems⁴⁶ where verifying the quality of a solution is far easier than finding it in the first place.
 
-<mark>AlphaEvolve 擅长验证解决方案质量远比首先找到它容易得多的问题。</mark>
+<mark>AlphaEvolve⁴⁶ 擅长验证解决方案质量远比首先找到它容易得多的问题。</mark>
 
 ---
 

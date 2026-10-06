@@ -7,7 +7,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is a **bilingual Chinese-English translation project** of "Introduction to Agents: From Predictive AI to Autonomous Agents". The book provides a comprehensive introduction to AI agents, covering the evolution from predictive AI to autonomous agents.
 
 **Key Characteristics:**
-- Pure documentation/translation project (no code to build, test, or run)
+- Documentation/translation project with a generated VitePress reading site
+- Source edition: Updated May 2026; see source/edition.json and EDITION-2026.md
+- Build with `npm ci` then `npm run docs:build`; content source is the seven root chapter Markdown files
 - All content is in Markdown format
 - Uses HTML `<mark>` tags for Chinese text highlighting
 - Follows strict bilingual format with English and Chinese side-by-side
@@ -148,8 +150,7 @@ Reference `chapters/image_index.md` for complete image location mapping.
 
 Translation progress:
 - ✅ Extraction Complete: All text and images extracted
-- ⏳ In Progress: None
-- ❌ Pending: All 7 chapters (0/7, 0%)
+- ✅ Complete: All 7 chapters, synchronized with the May 2026 PDF
 
 Check README.md for detailed progress tracking.
 
@@ -194,9 +195,9 @@ Check for:
 
 ## Important Notes
 
-- **No build/test/run commands**: This is a pure documentation project
+- **Site build**: `npm run docs:build`; generated `.book-docs/` must not be committed
 - **All files are Markdown**: No code compilation or execution needed
-- **GitHub is the primary viewing platform**: Format optimized for GitHub rendering
+- **Reading site**: VitePress generates Chinese, English and bilingual views; preserve source `<mark>` conventions
 - **Yellow highlighting is essential**: `<mark>` tags are mandatory for all Chinese text
 - **Image positioning is critical**: Must match original PDF layout
 - **Endnotes must be translated**: Complete coverage required

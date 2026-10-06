@@ -1,3 +1,4 @@
+<!-- Source edition: Updated May 2026. Figure 4 updated; other embedded figures unchanged. -->
 # Introduction to Agents - 图片索引
 
 

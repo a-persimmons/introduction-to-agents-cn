@@ -4,7 +4,13 @@
 
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
+**当前版本 (Edition)**: Updated May 2026（2026 年 5 月更新版）
+
 **原书页数 (Pages)**: 54
+
+**在线阅读**：[中文 / English / 中英对照](https://a-persimmons.github.io/introduction-to-agents-cn/)
+
+本仓库已根据提供的 2026 版 PDF 更新。详见 [版本更新说明](EDITION-2026.md)。
 
 ---
 
@@ -160,4 +166,4 @@ Thanks to all translators and reviewers who contributed to this project!
 
 ---
 
-**最后更新 (Last Updated)**: 2025-11-14
+**最后更新 (Last Updated)**: 2026-10-06

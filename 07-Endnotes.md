@@ -2,9 +2,9 @@
 
 ---
 
-## Introduction to Agents and Agent Architectures | <mark>智能体及其架构简介</mark>
+## Introduction to Agents | <mark>智能体入门</mark>
 
-**November 2025**
+**Updated May 2026 | <mark>2026 年 5 月更新</mark>**
 
 ---
 
@@ -189,6 +189,10 @@
 45. Deepak Nathani et. al. 2025, 'MLGym: A New Framework and Benchmark for Advancing AI Research Agents', Available at: https://arxiv.org/abs/2502.14499.
 
 <mark>45. Deepak Nathani 等 2025，'MLGym：推进 AI 研究智能体的新框架和基准'，可访问：https://arxiv.org/abs/2502.14499。</mark>
+
+46. https://deepmind.google/blog/alphaevolve-impact/
+
+<mark>46. https://deepmind.google/blog/alphaevolve-impact/</mark>
 
 ---
 
